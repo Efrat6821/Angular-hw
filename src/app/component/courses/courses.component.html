@@ -1,0 +1,14 @@
+<h1 ngClass="write">רשימת הקורסים:</h1>
+<br><br><br>
+<div *ngFor="let c of courses let e = even" [ngClass]="{'even': e, 'odd': !e}">
+    <h2 ngClass="write" [ngStyle]="{'color: yellow;': isStartingSoon(c)}">{{c.name}}</h2>
+    <h2 ngClass="write" [ngStyle]="{'color':isStartingSoon(c)?'blue':''}" [ngStyle]="{'color':isEndingSoon(c)?'red':''}">{{c.name}}</h2>
+
+    <h3 ngClass="write"
+        [ngClass]="{'hourNumber30': c.hourNumber<=30, 'hourNumber60': c.hourNumber>30&&c.hourNumber<=60,'hourNumberBig':c.hourNumber>60}">
+        {{c.hourNumber}} שעות</h3>
+    <h3 ngClass="write" *ngIf="IfFrontalOrLaboratory(c.type)">שם מרצה: {{c.teacherName}}</h3>
+    <p>תאריך התחלה: {{c.startDate | date:"dd/MM/YYYY"}}, תאריך סיום: {{c.endDate|date:"dd/mm/yyyy"}}</p>
+    <button  (click)="Registration_for_the_course(c)">להרשמה לקורס</button>
+
+</div>
