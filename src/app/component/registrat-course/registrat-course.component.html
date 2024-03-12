@@ -1,0 +1,12 @@
+<h1 ngClass="write">רשימת הקורסים:</h1>
+<br><br><br>
+<div *ngFor="let c of courses let e = even" [ngClass]="{'even': e, 'odd': !e}">
+    <app-courses [courseData]="c" (registare)="registareCourse($event)" (cancelRegistare)="CancelRegistareCourse($event)"></app-courses>
+</div>
+
+<br>
+<h1>הקורסים אליהם נרשמת:</h1>
+<ul *ngFor="let r of courseRegistra">
+    <li>{{r}}</li>  
+</ul>
+<button (click)="CancelAllRegistareCourse()">בטל הכל</button>

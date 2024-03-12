@@ -1,4 +1,5 @@
-import { typeOfCourse }from './typeOfCourse'
+import { typeOfCourse }from './typeOfCourse';
+
 export interface course{
     name:string,
     teacherName:string
