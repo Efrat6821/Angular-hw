@@ -1,0 +1,21 @@
+<form #f="ngForm">
+    <div *ngIf="!ShowAllCourses">
+        <label for="userName">שם משתמש:</label>
+
+        <input type="text" name="userName" [(ngModel)]="userName" required maxlength="20"
+             class="btn">
+            <!-- [ngClass]="{'inValid':formSubmit && f.controls['userName']?.invalid}" -->
+        <p *ngIf="formSubmit&&f.controls['userName']?.invalid" class="error">יש להכניס שם משתמש</p>
+        <!-- [ngClass]="!f.controls['u'].valid ? 'invalid-field':''"[ngClass]="{'inValid':f.controls[userName].invalid}  [ngClass]="{'inValid':f.controls['userName']?.valid}"-->
+    </div>
+    <div *ngIf="!ShowAllCourses">
+        <label for="password">סיסמה:</label>
+        <input type="password" name="password" [(ngModel)]="password" maxlength="20" required="true"
+             class="btn">
+            <!-- [ngClass]="{'inValid':formSubmit && f.controls['password']?.invalid}" -->
+        <p *ngIf="formSubmit&&f.controls['password']?.invalid" class="error">יש להכניס סיסמה</p>
+
+    </div>
+    <button *ngIf="!ShowAllCourses" type="submit" (click)="send()">שליחה</button>
+    <app-registrat-course *ngIf="ShowAllCourses"></app-registrat-course>
+</form>

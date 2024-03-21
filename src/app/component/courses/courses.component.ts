@@ -10,7 +10,6 @@ import { typeOfCourse } from '../../models/typeOfCourse';
 
 export class CoursesComponent {
 
-
   @Input()
   courseData: course = { name: '', teacherName: '', type: typeOfCourse.Frontal, hourNumber: 0, startDate: new Date('0-0-0'), endDate: new Date('0-0-0') }
 

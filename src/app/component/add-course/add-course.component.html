@@ -1,0 +1,30 @@
+<form [formGroup]="form!">
+    <div>
+        <label>שם:</label>
+        <input type="text" formControlName="name">
+    </div>
+    <div>
+        <label>שם המרצה</label>
+        <input type="text" formControlName="teacherName">
+    </div>
+    <div>
+        <label>מספר שעות</label>
+        <input type="number" formControlName="numberHours">
+    </div>
+    <div>
+        <label>סוג הקורס</label>
+        <input type="text" formControlName="type">
+    </div>
+    <div>
+        <label> תאריך התחלת קורס</label>
+        <input type="date" formControlName="startDate">
+    </div>
+    <div>
+        <label> תאריך סיום קורס</label>
+        <input type="date" formControlName="endDate">
+    </div>
+    <button type="submit" (click)="save()" [disabled]="!form.valid">שמור</button>
+
+
+
+</form>

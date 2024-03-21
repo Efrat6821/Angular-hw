@@ -1,4 +1,4 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, Input, Output, input } from '@angular/core';
 import { course } from '../../models/course';
 import { EventEmitter } from 'stream';
 import { typeOfCourse } from '../../models/typeOfCourse';
@@ -22,6 +22,8 @@ export class RegistratCourseComponent {
 
   courseRegistra: string[] = [];
 
+  // @Input() display: boolean = false;
+
 
   registareCourse($event: string) {
     this.courseRegistra.push($event);
@@ -35,5 +37,12 @@ export class RegistratCourseComponent {
   CancelAllRegistareCourse() {
     this.courseRegistra.splice(0, this.courseRegistra.length);
   }
-  
+  AddC: boolean = false;
+  addCourse() {
+    this.AddC = true;
+  }
+  add($event:course){
+    this.courses.push($event);
+  }
+
 }

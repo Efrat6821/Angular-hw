@@ -10,3 +10,5 @@
     <li>{{r}}</li>  
 </ul>
 <button (click)="CancelAllRegistareCourse()">בטל הכל</button>
+<button (click)="addCourse()">להוספת קורס חדר לחץ כאן!</button>
+<app-add-course *ngIf="AddC" (newCourse)="add($event)"></app-add-course>
